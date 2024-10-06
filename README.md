@@ -1,6 +1,6 @@
 # Candy Land
 ## Description
-For more information about the design process please refer to the [high level design](https://github.com/secretmtgdev/CandyLand/blob/master/documents/HLD.md) and the [low level design](https://github.com/secretmtgdev/CandyLand/blob/master/documents/LLD.md) documents.
+For more information about the design process please refer to the [high level design](https://github.com/secretmtgdev/CandyLand/blob/main/documents/HLD.md) and the [low level design](https://github.com/secretmtgdev/CandyLand/blob/main/documents/LLD.md) documents.
 
 ## Game play
 ### Setting up the game
