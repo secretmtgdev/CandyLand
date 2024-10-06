@@ -6,7 +6,7 @@ This is a little bit of practice with low level design on the frontend and backe
 The tech here is going to be very basic React.
 
 ### Blueprints
-**Color**
+**Color**\
 There are 7 different colors in the game. Each color is used for a space on the board as well as color on a card.
 ```typescript
 enum Color {
@@ -21,7 +21,7 @@ enum Color {
 }
 ```
 
-**Location**
+**Location**\
 Location is used to determine where a player is on the board, where certain colors and special events are, and where a bridge should go.
 ```typescript
 type Location {
@@ -35,7 +35,7 @@ type Bridge {
 }
 ```
 
-**GameState**
+**GameState**\
 Like many games, we will follow the singleton pattern here. There should only be one game state at a time and for this we will leverage Redux. Actions taken by a player will trigger events to update various portions of the overall game state.
 
 ```typescript
@@ -48,7 +48,7 @@ type GameState {
 }
 ```
 
-**Player**
+**Player**\
 We really only care about the location of the player. When determining who the winner is we will use the game state to get the specific index.
 ```typescript
 interface Player {
@@ -56,14 +56,14 @@ interface Player {
 }
 ```
 
-**Space**
+**Space**\
 ```typescript
 interface Space {
     color: Color;
 }
 ```
 
-**Card**
+**Card**\
 There are a couple of card types and we want to ensure that we support them. We leverage a generic interface that contains the core properties of what it means to be a Card supertype and then split off into sub types.
 ```typescript
 enum SpecialCardType {
@@ -93,30 +93,17 @@ First question, do we really need a backend for this project or can we leverage 
 
 The tech here is going leverage Python and Postgresql.
 
-**Location Model**
-Location:
-    - Row: number
-    - Column: number
+**Location Model**\
+![GameState model](https://github.com/secretmtgdev/CandyLand/blob/main/documents/images/location_model.png)
 
-**Card Model**
-Card:
-    - Color: string
-    - BlockCount: number | undefined
-    - type: string | undefined
+**Card Model**\
+![GameState model](https://github.com/secretmtgdev/CandyLand/blob/main/documents/images/card_model.png)
 
-**Space Model**
-Space:
-    - Location: Location
-    - Color: string
-    - Picture: string | undefined
+**Space Model**\
+![GameState model](https://github.com/secretmtgdev/CandyLand/blob/main/documents/images/space_model.png)
 
-**Gamestate Model**
-GameState:
-    - DiscardPile: Card[]
-    - Deck: Card[]
-    - IsGameOver: boolean
-    - Players: Location[]
-    - Board: Space[][]
+**GameState Model**\
+![GameState model](https://github.com/secretmtgdev/CandyLand/blob/main/documents/images/gamestate_model.png)
 
 ### Strategies
 #### Caching
